@@ -10,6 +10,16 @@ const Register = () => {
     checkPassword: "",
   });
 
+  const handleChange = (event) => {
+    const [name, value] = event.target;
+    setUserDetails((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
   return (
     <>
       <link
@@ -55,6 +65,7 @@ const Register = () => {
                   className="form-control"
                   placeholder="Full name"
                   type="text"
+                  onChange={handleChange}
                 />
               </div>{" "}
               {/* form-group// */}
@@ -72,6 +83,7 @@ const Register = () => {
                   className="form-control"
                   placeholder="Email address"
                   type="email"
+                  onChange={handleChange}
                 />
               </div>{" "}
               {/* form-group// */}
@@ -125,6 +137,7 @@ const Register = () => {
                   className="form-control"
                   placeholder="Create password"
                   type="password"
+                  onChange={handleChange}
                 />
               </div>{" "}
               {/* form-group// */}
@@ -142,6 +155,7 @@ const Register = () => {
                   className="form-control"
                   placeholder="Repeat password"
                   type="password"
+                  onChange={handleChange}
                 />
               </div>{" "}
               {/* form-group// */}
@@ -163,6 +177,10 @@ const Register = () => {
       {/*container end.//*/}
       <br />
       <br />
+      <p>{userDetails.name}</p>
+      <p>{userDetails.email}</p>
+      <p>{userDetails.password}</p>
+      <p>{userDetails.checkPassword}</p>
       <article className="bg-secondary mb-3"></article>
     </>
   );
