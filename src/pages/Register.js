@@ -22,9 +22,8 @@ const Register = () => {
   };
 
   function validateEmail(email) {
-    const re =
-      /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return re.test(email.toLowerCase());
   }
 
   const validate = (userDetails) => {
@@ -60,7 +59,12 @@ const Register = () => {
     };
 
     if (validate(userDetails)) {
-      const response = await axios.post("/users/register", user);
+      try {
+        const response = await axios.post("/users/register", user);
+        console.log("Response from server:", response.data);
+      } catch (error) {
+        console.error("Error while registering:", error);
+      }
     }
   };
 
