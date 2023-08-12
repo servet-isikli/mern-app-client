@@ -29,37 +29,38 @@ const Register = () => {
 
   const validate = (userDetails) => {
     if (userDetails.name.length < 1) {
-      alert("isim bos olamaz");
+      alert("İsim boş olamaz");
       return false;
     }
 
     if (!validateEmail(userDetails.email)) {
-      alert("gecerli bir email adresi giriniz");
+      alert("Geçerli bir email adresi giriniz");
       return false;
     }
 
     if (userDetails.password.length < 6) {
-      alert("sifre 5 haneden kucuk olamaz");
+      alert("Şifre 6 karakterden kısa olamaz");
       return false;
     }
 
-    if (!(userDetails.password === userDetails.checkPassword)) {
-      alert("sifreler eslesmiyor");
+    if (userDetails.password !== userDetails.checkPassword) {
+      alert("Şifreler eşleşmiyor");
       return false;
     }
+
     return true;
   };
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const User = {
+    const user = {
       name: userDetails.name,
       email: userDetails.email,
       password: userDetails.password,
     };
 
     if (validate(userDetails)) {
-      const response = await axios.post("/users/register", User);
+      const response = await axios.post("/users/register", user);
     }
   };
 
@@ -82,12 +83,10 @@ const Register = () => {
             <p className="text-center">Get started with your free account</p>
             <p>
               <a href="/" className="btn btn-block btn-twitter">
-                {" "}
                 <i className="fab fa-twitter" /> &nbsp; Login via Twitter
               </a>
               <a href="/" className="btn btn-block btn-facebook">
-                {" "}
-                <i className="fab fa-facebook-f" /> &nbsp; Login via facebook
+                <i className="fab fa-facebook-f" /> &nbsp; Login via Facebook
               </a>
             </p>
             <p className="divider-text">
@@ -97,8 +96,7 @@ const Register = () => {
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-user" />{" "}
+                    <i className="fa fa-user" />
                   </span>
                 </div>
                 <input
@@ -110,13 +108,11 @@ const Register = () => {
                   type="text"
                   onChange={handleChange}
                 />
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-envelope" />{" "}
+                    <i className="fa fa-envelope" />
                   </span>
                 </div>
                 <input
@@ -128,13 +124,11 @@ const Register = () => {
                   type="email"
                   onChange={handleChange}
                 />
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-phone" />{" "}
+                    <i className="fa fa-phone" />
                   </span>
                 </div>
                 <select className="custom-select" style={{ maxWidth: 120 }}>
@@ -149,28 +143,24 @@ const Register = () => {
                   placeholder="Phone number"
                   type="text"
                 />
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-building" />{" "}
+                    <i className="fa fa-building" />
                   </span>
                 </div>
                 <select className="form-control">
-                  <option defaultValue=""> Select job type</option>
+                  <option defaultValue="">Select job type</option>
                   <option>Designer</option>
                   <option>Manager</option>
-                  <option>Accaunting</option>
+                  <option>Accounting</option>
                 </select>
-              </div>{" "}
-              {/* form-group end.// */}
+              </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-lock" />{" "}
+                    <i className="fa fa-lock" />
                   </span>
                 </div>
                 <input
@@ -182,13 +172,11 @@ const Register = () => {
                   type="password"
                   onChange={handleChange}
                 />
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
-                    {" "}
-                    <i className="fa fa-lock" />{" "}
+                    <i className="fa fa-lock" />
                   </span>
                 </div>
                 <input
@@ -200,28 +188,23 @@ const Register = () => {
                   type="password"
                   onChange={handleChange}
                 />
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <div className="form-group">
                 <button
                   onClick={submitHandler}
                   type="submit"
                   className="btn btn-primary btn-block"
                 >
-                  {" "}
                   Create Account
                 </button>
-              </div>{" "}
-              {/* form-group// */}
+              </div>
               <p className="text-center">
-                Have an account? <Link to="/login">Log In</Link>{" "}
+                Have an account? <Link to="/login">Log In</Link>
               </p>
             </form>
           </article>
-        </div>{" "}
-        {/* card.// */}
+        </div>
       </div>
-      {/*container end.//*/}
       <br />
       <br />
       <article className="bg-secondary mb-3"></article>
