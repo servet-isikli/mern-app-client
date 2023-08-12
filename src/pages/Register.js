@@ -138,7 +138,7 @@ const Register = () => {
                   </span>
                 </div>
                 <select className="custom-select" style={{ maxWidth: 120 }}>
-                  <option selected="">+971</option>
+                  <option defaultValue="">+971</option>
                   <option value={1}>+972</option>
                   <option value={2}>+198</option>
                   <option value={3}>+701</option>
@@ -159,7 +159,7 @@ const Register = () => {
                   </span>
                 </div>
                 <select className="form-control">
-                  <option selected=""> Select job type</option>
+                  <option defaultValue=""> Select job type</option>
                   <option>Designer</option>
                   <option>Manager</option>
                   <option>Accaunting</option>
