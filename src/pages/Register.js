@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const [userDetails, setUserDetails] = useState({
@@ -37,7 +38,7 @@ const Register = () => {
       return false;
     }
 
-    if (userDetails.password.length < 5) {
+    if (userDetails.password.length < 6) {
       alert("sifre 5 haneden kucuk olamaz");
       return false;
     }
@@ -56,6 +57,10 @@ const Register = () => {
       email: userDetails.email,
       password: userDetails.password,
     };
+
+    if (validate(userDetails)) {
+      const response = await axios.post("/users/register", User);
+    }
   };
 
   return (
