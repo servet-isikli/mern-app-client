@@ -20,6 +20,44 @@ const Register = () => {
     });
   };
 
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  const validate = (userDetails) => {
+    if (userDetails.name.length < 1) {
+      alert("isim bos olamaz");
+      return false;
+    }
+
+    if (!validateEmail(userDetails.email)) {
+      alert("gecerli bir email adresi giriniz");
+      return false;
+    }
+
+    if (userDetails.password.length < 5) {
+      alert("sifre 5 haneden kucuk olamaz");
+      return false;
+    }
+
+    if (!(userDetails.password === userDetails.checkPassword)) {
+      alert("sifreler eslesmiyor");
+      return false;
+    }
+    return true;
+  };
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const User = {
+      name: userDetails.name,
+      email: userDetails.email,
+      password: userDetails.password,
+    };
+  };
+
   return (
     <>
       <link
@@ -160,7 +198,11 @@ const Register = () => {
               </div>{" "}
               {/* form-group// */}
               <div className="form-group">
-                <button type="submit" className="btn btn-primary btn-block">
+                <button
+                  onClick={submitHandler}
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                >
                   {" "}
                   Create Account
                 </button>
