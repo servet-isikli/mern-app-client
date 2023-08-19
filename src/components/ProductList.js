@@ -1,13 +1,18 @@
 import React from "react";
+import { useProductListContext } from "../contexts/ProductListContext";
 
-const ProductList = ({ products }) => {
+const ProductList = () => {
+  const products = useProductListContext();
+
   return (
     <div>
       <h2>Product List</h2>
       <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
+        {products === "loading" ? (
+          <p>Loading...</p>
+        ) : (
+          products.map((product) => <li key={product.id}>{product.name}</li>)
+        )}
       </ul>
     </div>
   );

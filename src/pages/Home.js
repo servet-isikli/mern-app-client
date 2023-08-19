@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProductList from "../components/ProductList";
 import BCommerce from "../components/BCommerce";
+import { useProductListContext } from "../contexts/ProductListContext";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/products") // API isteği yapılıyor
-      .then((response) => response.json()) // Gelen veriyi JSON olarak çözümleniyor
-      .then((data) => setProducts(data)) // Ürünleri state'e ayarlanıyor
-      .catch((error) => console.error("Error fetching products:", error));
-  }, []);
+  const products = useProductListContext();
 
   return (
     <div>
