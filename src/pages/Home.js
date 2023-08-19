@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
+import BCommerce from "../components/BCommerce";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ const Home = () => {
     <div>
       <h1>Home</h1>
       <ProductList products={products} />
+      <BCommerce />
     </div>
   );
 };
