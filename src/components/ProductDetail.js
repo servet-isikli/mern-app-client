@@ -1,6 +1,12 @@
 import React from "react";
+import { useProductListContext } from "../contexts/ProductListContext";
 
-const ProductDetail = ({ product }) => {
+const ProductDetail = () => {
+  const products = useProductListContext();
+
+  // Örnek olarak ilk ürünü seçiyoruz, istediğiniz şekilde ürünü seçebilirsiniz
+  const product = products[0];
+
   return (
     <div>
       <h2>Product Detail</h2>
