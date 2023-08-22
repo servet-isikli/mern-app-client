@@ -1,15 +1,15 @@
 import React from "react";
 import { useProductContext } from "../contexts/ProductContext";
-import { Card, Button, Col } from "react-bootstrap"; // Bootstrap bileşenlerini içe aktarın
+import { Card, Button, Col } from "react-bootstrap";
 
-const ProductList = () => {
-  const products = useProductContext();
+const GetProducts = () => {
+  const { products, loading } = useProductContext();
 
   return (
     <div>
       <h2>Product List</h2>
       <div className="row">
-        {products === "loading" ? (
+        {loading ? (
           <p>Loading...</p>
         ) : (
           products.map((product) => (
@@ -35,4 +35,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default GetProducts;

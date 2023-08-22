@@ -1,21 +1,24 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ProductDetail from "../components/ProductDetail";
+import UpdateProduct from "../components/UpdateProduct";
 
-const ProductDetailPage = () => {
+const UpdateProductPage = () => {
+  const { productId } = useParams();
+
   return (
     <div>
       <Container>
         <Row>
           <Col sm={12} className="text-center">
-            <h1>Product Detail</h1>
+            <h1>Update Product</h1>
           </Col>
         </Row>
         <Row>
           <Col sm={12}>
-            <ProductDetail />
+            <UpdateProduct productId={productId} />
           </Col>
         </Row>
       </Container>
@@ -23,4 +26,4 @@ const ProductDetailPage = () => {
   );
 };
 
-export default ProductDetailPage;
+export default UpdateProductPage;
