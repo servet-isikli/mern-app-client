@@ -1,11 +1,11 @@
 import React from "react";
-import ProductList from "../components/ProductList";
+import ProductDetail from "../components/ProductDetail";
 import { useProductListContext } from "../contexts/ProductListContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Home = () => {
+const ProductDetailPage = () => {
   const products = useProductListContext();
 
   return (
@@ -18,16 +18,15 @@ const Home = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <ProductList products={products} />
+            <ProductDetail products={products} />
           </Col>
         </Row>
         <Row>
-          <Col sm={12}>
-          </Col>
+          <Col sm={12}></Col>
         </Row>
       </Container>
     </div>
   );
 };
 
-export default Home;
+export default ProductDetailPage;
