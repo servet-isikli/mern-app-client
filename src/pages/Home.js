@@ -14,7 +14,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col sm={12} className="text-center">
-            <h1>Home</h1>
+            <h1>E-Commerce</h1>
           </Col>
         </Row>
         <Row>
