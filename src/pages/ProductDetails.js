@@ -1,29 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import ProductDetail from "../components/ProductDetail";
+import { useProductListContext } from "../contexts/ProductListContext";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-const ProductDetails = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    // API isteği ile ürünü al ve setProduct ile ayarla
-    fetch(`/api/products/${id}`) // API isteği yapılıyor (örneğin /api/products/123 gibi)
-      .then((response) => response.json()) // Gelen veriyi JSON olarak çözümleniyor
-      .then((data) => setProduct(data)) // Ürünü state'e ayarlanıyor
-      .catch((error) => console.error("Error fetching product:", error));
-  }, [id]);
-
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+const Home = () => {
+  const products = useProductListContext();
 
   return (
     <div>
-      <h1>Product Details</h1>
-      <ProductDetail product={product} />
+      <Container>
+        <Row>
+          <Col sm={12} className="text-center">
+            <h1>E-Commerce</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12}>
+            <ProductDetail products={products} />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12}></Col>
+        </Row>
+      </Container>
     </div>
   );
 };
 
-export default ProductDetails;
+export default Home;

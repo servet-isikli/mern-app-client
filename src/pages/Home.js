@@ -1,6 +1,5 @@
 import React from "react";
 import ProductList from "../components/ProductList";
-import BCommerce from "../components/BCommerce";
 import { useProductListContext } from "../contexts/ProductListContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -24,7 +23,6 @@ const Home = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <BCommerce />
           </Col>
         </Row>
       </Container>

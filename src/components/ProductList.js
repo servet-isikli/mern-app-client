@@ -23,6 +23,7 @@ const ProductList = () => {
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>{product.description}</Card.Text>
+                  <Card.Text>Price: {product.price}</Card.Text>
                   <Button variant="primary">Add to Cart</Button>
                 </Card.Body>
               </Card>
