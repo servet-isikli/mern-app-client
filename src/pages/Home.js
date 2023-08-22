@@ -1,12 +1,12 @@
 import React from "react";
 import ProductList from "../components/ProductList";
-import { useProductListContext } from "../contexts/ProductListContext";
+import { useProductContext } from "../contexts/ProductContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const ProductListPage = () => {
-  const products = useProductListContext();
+  const products = useProductContext();
 
   return (
     <div>

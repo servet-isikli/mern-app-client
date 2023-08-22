@@ -1,12 +1,12 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 
-const ProductListContext = createContext();
+const ProductContext = createContext();
 
-export const useProductListContext = () => {
-  return useContext(ProductListContext);
+export const useProductContext = () => {
+  return useContext(ProductContext);
 };
 
-export const ProductListProvider = ({ children }) => {
+export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState("loading");
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export const ProductListProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductListContext.Provider value={products}>
+    <ProductContext.Provider value={products}>
       {children}
-    </ProductListContext.Provider>
+    </ProductContext.Provider>
   );
 };

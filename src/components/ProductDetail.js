@@ -1,9 +1,9 @@
 import React from "react";
-import { useProductListContext } from "../contexts/ProductListContext";
+import { useProductContext } from "../contexts/ProductContext";
 import { Card, Button } from "react-bootstrap";
 
 const ProductDetail = () => {
-  const products = useProductListContext();
+  const products = useProductContext();
 
   // Örnek olarak ilk ürünü seçiyoruz, istediğiniz şekilde ürünü seçebilirsiniz
   const product = products[0];

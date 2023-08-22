@@ -1,9 +1,9 @@
 import React from "react";
-import { useProductListContext } from "../contexts/ProductListContext";
+import { useProductContext } from "../contexts/ProductContext";
 import { Card, Button, Col } from "react-bootstrap"; // Bootstrap bileşenlerini içe aktarın
 
 const ProductList = () => {
-  const products = useProductListContext();
+  const products = useProductContext();
 
   return (
     <div>

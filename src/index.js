@@ -6,19 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { ProductListProvider } from "./contexts/ProductListContext";
+import { ProductProvider } from "./contexts/ProductContext";
 // import { CategoryListProvider } from "./contexts/CategoryListContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductListProvider>
+    <ProductProvider>
       {/* <CategoryListProvider> */}
         <BrowserRouter>
           <App />
         </BrowserRouter>
       {/* </CategoryListProvider> */}
-    </ProductListProvider>
+    </ProductProvider>
   </React.StrictMode>
 );
 
