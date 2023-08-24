@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { ProductProvider } from "./contexts/ProductContext";
 import { Provider } from "react-redux";
-import store from "../store";
+import store from "./redux/store";
 // import { CategoryListProvider } from "./contexts/CategoryListContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
