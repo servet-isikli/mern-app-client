@@ -5,6 +5,7 @@ import CreateProductPage from "./pages/CreateProductPage";
 import UpdateProductPage from "./pages/UpdateProductPage";
 import { Route, Routes } from "react-router-dom";
 import DeleteProduct from "./components/DeleteProduct";
+import ReduxCom from "./components/ReduxCom";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/update/:productId" element={<UpdateProductPage />} />
       <Route path="/detail/:productId" element={<ProductDetailPage />} />
       <Route path="/delete/:productId" element={<DeleteProduct />} />
+      <Route path="/redux" element={<ReduxCom />} />
     </Routes>
   );
 };

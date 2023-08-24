@@ -1,17 +1,12 @@
-// reducers/productReducer.js
+// src/redux/reducers/productReducer.js
 const initialState = {
   products: [],
 };
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_PRODUCTS":
-      // Durumu güncelleyerek ürünleri alma işlemini gerçekleştir
-      return {
-        ...state,
-        products: action.payload,
-      };
-    // Diğer case'ler burada olabilir
+    case "SET_PRODUCTS":
+      return { ...state, products: action.payload };
     default:
       return state;
   }
