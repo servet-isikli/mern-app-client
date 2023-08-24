@@ -8,7 +8,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const selectedProduct = products.find((p) => p.id === productId);
+    const selectedProduct = products.find((p) => p._id === productId);
     setProduct(selectedProduct);
   }, [productId, products]);
 

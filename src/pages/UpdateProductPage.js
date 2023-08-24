@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import UpdateProduct from "../components/UpdateProduct";
 
 const UpdateProductPage = () => {
-  const { productId } = useParams();
+  const { productId } = useParams(); // Kullanilmayabilir
 
   return (
     <div>
