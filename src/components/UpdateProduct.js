@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useProductContext } from "../contexts/ProductContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useParams } from "react-router-dom";
 
-const UpdateProduct = ({ productId }) => {
+const UpdateProduct = () => {
   const { products, updateProduct } = useProductContext();
+  const { productId } = useParams();
 
   const initialFormData = {
     name: "",
