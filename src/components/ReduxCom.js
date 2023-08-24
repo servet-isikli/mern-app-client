@@ -13,7 +13,7 @@ const ReduxCom = () => {
   return (
     <div>
       {products.map((product) => (
-        <div key={product.id}>{product.name}</div>
+        <div key={product._id}>{product.name}</div>
       ))}
     </div>
   );
