@@ -7,18 +7,22 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { ProductProvider } from "./contexts/ProductContext";
+import { Provider } from "react-redux";
+import store from "../store";
 // import { CategoryListProvider } from "./contexts/CategoryListContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductProvider>
-      {/* <CategoryListProvider> */}
+    <Provider store={store}>
+      <ProductProvider>
+        {/* <CategoryListProvider> */}
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      {/* </CategoryListProvider> */}
-    </ProductProvider>
+        {/* </CategoryListProvider> */}
+      </ProductProvider>
+    </Provider>
   </React.StrictMode>
 );
 
