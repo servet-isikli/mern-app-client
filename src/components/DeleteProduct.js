@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useProductContext } from "../contexts/ProductContext";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link,  } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const history = useHistory();
   const { products, deleteProduct } = useProductContext();
   const [product, setProduct] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
