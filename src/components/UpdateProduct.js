@@ -17,7 +17,7 @@ const UpdateProduct = ({ productId }) => {
 
   useEffect(() => {
     const productToUpdate = products.find(
-      (product) => product.id === productId
+      (product) => product._id === productId
     );
     if (productToUpdate) {
       setFormData(productToUpdate);
@@ -36,10 +36,10 @@ const UpdateProduct = ({ productId }) => {
     e.preventDefault();
     updateProduct(productId, formData)
       .then(() => {
-        // Handle success or any other action
+        // Başarılı güncelleme sonrası işlemler
       })
       .catch((error) => {
-        // Handle error
+        // Hata durumlarında işlemler
         console.error("Error updating product:", error);
       });
   };
