@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useProductContext } from "../contexts/ProductContext";
+// ProductDetail.js
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { fetchProducts } from "../redux/actions/productActions";
 
 const ProductDetail = () => {
-  const { products } = useProductContext();
   const { productId } = useParams();
-  const [product, setProduct] = useState(null);
+  const product = useSelector((state) =>
+    state.products.find((p) => p._id === productId)
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const selectedProduct = products.find((p) => p._id === productId);
-    setProduct(selectedProduct);
-  }, [productId, products]);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   if (!product) {
     return <p>Loading...</p>;

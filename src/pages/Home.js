@@ -1,5 +1,5 @@
 import React from "react";
-import GetProducts from "../components/GetProducts";
+import ProductGet from "../components/ProductGet";
 import { useProductContext } from "../contexts/ProductContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,7 +18,7 @@ const Home = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <GetProducts products={products} />
+            <ProductGet products={products} />
           </Col>
         </Row>
         <Row>
