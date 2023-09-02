@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -12,7 +12,8 @@ const ProductDelete = () => {
   const product = useSelector((state) =>
     state.products.find((p) => p._id === productId)
   );
-  const isDeleted = useSelector((state) => state.isDeleted);
+
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts(productId)); // Ürün verilerini Redux store'dan yükleme
@@ -20,6 +21,8 @@ const ProductDelete = () => {
 
   const handleDelete = () => {
     dispatch(deleteProduct(productId));
+    // Ürün başarıyla silindiğinde Alert göster
+    setShowAlert(true);
   };
 
   return (
@@ -31,27 +34,23 @@ const ProductDelete = () => {
             <Card.Title>{product.name}</Card.Title>
             <Card.Text>{product.description}</Card.Text>
             <Card.Text>Price: ${product.price}</Card.Text>
-            {isDeleted ? (
-              <div>
-                <Alert variant="success">Product deleted successfully</Alert>
-                <Link to={`/products`}>
-                  <Button variant="primary">Back to Products</Button>
-                </Link>
-              </div>
-            ) : (
-              <div>
-                <Button variant="danger" onClick={handleDelete}>
-                  Delete Product
-                </Button>
-                <Link to={`/update/${productId}`}>
-                  <Button variant="primary">Edit Product</Button>
-                </Link>
-              </div>
-            )}
+            <div>
+              <Button variant="danger" onClick={handleDelete}>
+                Delete Product
+              </Button>
+              <Link to={`/update/${productId}`}>
+                <Button variant="primary">Edit Product</Button>
+              </Link>
+            </div>
           </Card.Body>
         </Card>
       ) : (
-        <p>Product not found</p>
+        <div>
+          <p>Product not found</p>
+        </div>
+      )}
+      {showAlert && (
+        <Alert variant="success">Product deleted successfully</Alert>
       )}
     </div>
   );
