@@ -1,13 +1,10 @@
 import React from "react";
 import ProductGet from "../components/ProductGet";
-import { useProductContext } from "../contexts/ProductContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const Home = () => {
-  const { products } = useProductContext();
-
   return (
     <div>
       <Container>
@@ -18,7 +15,7 @@ const Home = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <ProductGet products={products} />
+            <ProductGet />
           </Col>
         </Row>
         <Row>
