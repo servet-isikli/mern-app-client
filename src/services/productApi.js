@@ -1,9 +1,11 @@
-// services/api.js
+import axios from "axios";
+
 const API_URL = "/api/products";
 
 const getProducts = () => {
-  return fetch(API_URL)
-    .then((response) => response.json())
+  return axios
+    .get(API_URL)
+    .then((response) => response.data)
     .catch((error) => {
       console.error("Error fetching products:", error);
       throw error;
@@ -11,14 +13,13 @@ const getProducts = () => {
 };
 
 const createProduct = (productData) => {
-  return fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(productData),
-  })
-    .then((response) => response.json())
+  return axios
+    .post(API_URL, productData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => response.data)
     .catch((error) => {
       console.error("Error creating product:", error);
       throw error;
@@ -26,14 +27,13 @@ const createProduct = (productData) => {
 };
 
 const updateProduct = (productId, productData) => {
-  return fetch(`${API_URL}/${productId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(productData),
-  })
-    .then((response) => response.json())
+  return axios
+    .put(`${API_URL}/${productId}`, productData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => response.data)
     .catch((error) => {
       console.error("Error updating product:", error);
       throw error;
@@ -41,10 +41,9 @@ const updateProduct = (productId, productData) => {
 };
 
 const deleteProduct = (productId) => {
-  return fetch(`${API_URL}/${productId}`, {
-    method: "DELETE",
-  })
-    .then((response) => response.json())
+  return axios
+    .delete(`${API_URL}/${productId}`)
+    .then((response) => response.data)
     .catch((error) => {
       console.error("Error deleting product:", error);
       throw error;
