@@ -1,5 +1,5 @@
 // actions/productActions.js
-import { getProducts } from "../api";
+import { getProducts } from "../api/productApi";
 import {
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_SUCCESS,
