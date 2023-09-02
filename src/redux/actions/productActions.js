@@ -28,7 +28,7 @@ const fetchProductsSuccess = (products) => {
 const fetchProductsFailure = (error) => {
   return { type: FETCH_PRODUCTS_FAILURE, error: error };
 };
-
+// Ürün oku
 export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(fetchProductsRequest());

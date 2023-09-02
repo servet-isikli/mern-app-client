@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 
-const ProductDetail = () => {
+const ProductDelete = () => {
   const { productId } = useParams();
   const { products, deleteProduct } = useProductContext();
   const [product, setProduct] = useState(null);
@@ -58,4 +58,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDelete;

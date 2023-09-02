@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import UpdateProduct from "../components/UpdateProduct";
+import ProductUpdate from "../components/ProductUpdate";
 
 const UpdateProductPage = () => {
   const { productId } = useParams(); // Kullanilmayabilir
@@ -18,7 +18,7 @@ const UpdateProductPage = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <UpdateProduct productId={productId} />
+            <ProductUpdate productId={productId} />
           </Col>
         </Row>
       </Container>

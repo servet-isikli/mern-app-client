@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts()); // Tüm ürünleri çekmek için fetchProducts action'ını çağırın
   }, [dispatch]);
 
   if (!product) {

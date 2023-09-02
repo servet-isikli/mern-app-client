@@ -1,5 +1,5 @@
 import React from "react";
-import CreateProduct from "../components/CreateProduct";
+import ProductCreate from "../components/ProductCreate";
 import { useProductContext } from "../contexts/ProductContext";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,7 +18,7 @@ const CreateProductPage = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <CreateProduct createProduct={createProduct} />
+            <ProductCreate createProduct={createProduct} />
           </Col>
         </Row>
         <Row>

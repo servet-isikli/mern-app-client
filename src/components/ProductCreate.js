@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import { useProductContext } from "../contexts/ProductContext";
+import { useDispatch, useSelector } from "react-redux";
+import { createProduct } from "../redux/actions/productActions";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const CreateProduct = () => {
-  const { createProduct } = useProductContext();
+  const dispatch = useDispatch();
+  const createdProduct = useSelector((state) => state.createdProduct);
 
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: "",
     description: "",
     price: "",
     imageSrc: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,14 +27,7 @@ const CreateProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createProduct(formData)
-      .then(() => {
-        // Handle success or any other action
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error creating product:", error);
-      });
+    dispatch(createProduct(formData));
   };
 
   return (
@@ -74,6 +71,7 @@ const CreateProduct = () => {
       <Button variant="primary" type="submit">
         Create Product
       </Button>
+      {createdProduct && <p>Product created with ID: {createdProduct._id}</p>}
     </Form>
   );
 };
