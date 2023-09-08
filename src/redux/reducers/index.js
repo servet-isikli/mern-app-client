@@ -5,8 +5,7 @@ import userReducer from "./reducers/userReducer"; // Örnek olarak kullanıcı r
 
 const rootReducer = combineReducers({
   products: productReducer,
-  users: userReducer, // Örnek olarak kullanıcı reducer'ını ekleyin
-  // Diğer reducer'ları da burada ekleyebilirsiniz
+  users: userReducer, // Diğer reducer'ları da burada ekleyebilirsiniz
 });
 
 export default rootReducer;
