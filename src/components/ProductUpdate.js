@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useProductContext } from "../contexts/ProductContext";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { updateProduct, fetchProducts } from "../redux/actions/productActions"; // Redux eylemlerini ekleyin
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
-  const { products, updateProduct } = useProductContext();
   const { productId } = useParams();
+  const dispatch = useDispatch();
+  const product = useSelector((state) =>
+    state.products.find((product) => product._id === productId)
+  );
 
   const initialFormData = {
     name: "",
@@ -18,13 +22,14 @@ const UpdateProduct = () => {
   const [formData, setFormData] = useState(initialFormData);
 
   useEffect(() => {
-    const productToUpdate = products.find(
-      (product) => product._id === productId
-    );
-    if (productToUpdate) {
-      setFormData(productToUpdate);
+    dispatch(fetchProducts(productId)); // Ürün verisini Redux store'dan yükleme
+  }, [dispatch, productId]);
+
+  useEffect(() => {
+    if (product) {
+      setFormData(product);
     }
-  }, [productId, products]);
+  }, [product]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,14 +41,7 @@ const UpdateProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateProduct(productId, formData)
-      .then(() => {
-        // Başarılı güncelleme sonrası işlemler
-      })
-      .catch((error) => {
-        // Hata durumlarında işlemler
-        console.error("Error updating product:", error);
-      });
+    dispatch(updateProduct(productId, formData));
   };
 
   return (
