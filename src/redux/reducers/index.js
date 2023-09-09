@@ -1,4 +1,4 @@
-// src/redux//reducers/index.js
+// src/redux/reducers/index.js
 import { combineReducers } from "redux";
 import productReducer from "./productReducer";
 import userReducer from "./userReducer";
