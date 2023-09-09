@@ -3,11 +3,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProductDetail from "../components/ProductDetail";
-import { useParams } from "react-router-dom";
 
 const ProductDetailPage = () => {
-  const { productId } = useParams(); // Kullanilmayabilir
-
   return (
     <div>
       <Container>
@@ -18,7 +15,7 @@ const ProductDetailPage = () => {
         </Row>
         <Row>
           <Col sm={12}>
-            <ProductDetail productId={productId} />
+            <ProductDetail />
           </Col>
         </Row>
       </Container>
