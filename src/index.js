@@ -10,19 +10,22 @@ import { ProductProvider } from "./contexts/ProductContext";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 // import { CategoryListProvider } from "./contexts/CategoryListContext";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ProductProvider>
-        {/* <CategoryListProvider> */}
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-        {/* </CategoryListProvider> */}
-      </ProductProvider>
-    </Provider>
+    <ChakraProvider>
+      <Provider store={store}>
+        <ProductProvider>
+          {/* <CategoryListProvider> */}
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+          {/* </CategoryListProvider> */}
+        </ProductProvider>
+      </Provider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 
