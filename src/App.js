@@ -6,6 +6,7 @@ import ProductDeletePage from "./pages/ProductDeletePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductUptadePage from "./pages/ProductUptadePage";
 import UserRegister from "./components/UserRegister";
+import UserLogin from "./components/UserLogin";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Route path="/delete/:productId" element={<ProductDeletePage />} />
       <Route path="/detail/:productId" element={<ProductDetailPage />} />
       <Route path="/update/:productId" element={<ProductUptadePage />} />
-      <Route path="/user" element={<UserRegister />} />
+      <Route path="/register" element={<UserRegister />} />
+      <Route path="/login" element={<UserLogin />} />
     </Routes>
   );
 };
