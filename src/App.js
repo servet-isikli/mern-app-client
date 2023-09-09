@@ -7,7 +7,6 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductUptadePage from "./pages/ProductUptadePage";
 import UserRegister from "./components/UserRegister";
 import UserLogin from "./components/UserLogin";
-import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
@@ -19,7 +18,6 @@ const App = () => {
       <Route path="/update/:productId" element={<ProductUptadePage />} />
       <Route path="/register" element={<UserRegister />} />
       <Route path="/login" element={<UserLogin />} />
-      <Route path="/navbar" element={<Navbar />} />
     </Routes>
   );
 };

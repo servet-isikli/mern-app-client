@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 // import { CategoryListProvider } from "./contexts/CategoryListContext";
 import { ChakraProvider } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <ProductProvider>
           {/* <CategoryListProvider> */}
           <BrowserRouter>
+            <Navbar />
             <App />
           </BrowserRouter>
           {/* </CategoryListProvider> */}
