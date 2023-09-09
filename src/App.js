@@ -5,6 +5,7 @@ import ProductCreatePage from "./pages/ProductCreatePage";
 import ProductDeletePage from "./pages/ProductDeletePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductUptadePage from "./pages/ProductUptadePage";
+import UserRegister from "./components/UserRegister";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/delete/:productId" element={<ProductDeletePage />} />
       <Route path="/detail/:productId" element={<ProductDetailPage />} />
       <Route path="/update/:productId" element={<ProductUptadePage />} />
+      <Route path="/user" element={<UserRegister />} />
     </Routes>
   );
 };
