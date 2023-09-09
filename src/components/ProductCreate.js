@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
-  const createdProduct = useSelector((state) => state.createdProduct);
+  const createdProduct = useSelector((state) => state.products.createdProduct);
 
   const initialFormData = {
     name: "",

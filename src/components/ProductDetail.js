@@ -7,7 +7,7 @@ import { fetchProducts } from "../redux/actions/productActions";
 const ProductDetail = () => {
   const { productId } = useParams();
   const product = useSelector((state) =>
-    state.products.find((p) => p._id === productId)
+    state.products.products.find((p) => p._id === productId)
   );
   const dispatch = useDispatch();
 

@@ -9,7 +9,7 @@ const UpdateProduct = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) =>
-    state.products.find((product) => product._id === productId)
+    state.products.products.find((product) => product._id === productId)
   );
 
   const initialFormData = {

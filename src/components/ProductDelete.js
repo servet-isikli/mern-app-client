@@ -10,7 +10,7 @@ const ProductDelete = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) =>
-    state.products.find((p) => p._id === productId)
+    state.products.products.find((p) => p._id === productId)
   );
 
   const [showAlert, setShowAlert] = useState(false);

@@ -4,8 +4,8 @@ import { fetchProducts } from "../redux/actions/productActions";
 import { Card, Button, Col, Spinner, Row } from "react-bootstrap";
 
 const GetProducts = () => {
-  const products = useSelector((state) => state.products);
-  const loading = useSelector((state) => state.loading);
+  const products = useSelector((state) => state.products.products);
+  const loading = useSelector((state) => state.products.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
