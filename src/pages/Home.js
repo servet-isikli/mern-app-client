@@ -11,13 +11,11 @@ const Home = () => {
       <Container>
         <Row>
           <Col sm={12} className="text-center">
-            <h1>E-Commerce</h1>
           </Col>
         </Row>
 
         <Row>
           <Col sm={12} className="text-center">
-            <h1>Carousels</h1>
             <Carousels />
           </Col>
         </Row>
