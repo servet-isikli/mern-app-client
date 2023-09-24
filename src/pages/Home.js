@@ -3,6 +3,7 @@ import ProductGet from "../components/ProductGet";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Carousels from "../components/Carousels";
 
 const Home = () => {
   return (
@@ -13,6 +14,14 @@ const Home = () => {
             <h1>E-Commerce</h1>
           </Col>
         </Row>
+
+        <Row>
+          <Col sm={12} className="text-center">
+            <h1>Carousels</h1>
+            <Carousels />
+          </Col>
+        </Row>
+
         <Row>
           <Col sm={12}>
             <ProductGet />
